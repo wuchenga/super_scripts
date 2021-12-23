@@ -248,7 +248,7 @@ for author in $author_list; do
         script_cron="$(rand 1 59) $(rand 1 23) * * *" # 京车会签到，随机定时
         ;;
       jd_beauty_ex.js)
-        script_cron="$(rand 1 5) $(rand 6 8),$(rand 1 13),$(rand 18 20) * * * " # 美丽研究院兑换，随机定时
+        script_cron="$(rand 1 5) $(rand 6 8),$(rand 11 13),$(rand 18 20) * * * " # 美丽研究院兑换，随机定时
         ;;
       *)
         if [[ -z ${script_cron_standard} ]]; then
