@@ -1,12 +1,15 @@
 #!/bin/bash
-## Update: 2021-12-22
-## Content: del  jd_zd.js
+## Update: 2021-12-23
+## Content: add  jd_try_MyTrials.js(京东试用待领取通知)
+##          rpc  jd_try.js -> jd_try_xh.js jd_jmf.js -> jd_mofang.js
+##          del  jd_xqscjd.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
 
 #  jd_price.js                     京东价保
-#  jd_try.js                       京东试用
+#  jd_try_xh.js                    京东试用
+#  jd_try_MyTrials.js              京东试用待领取通知
 #  jd_bean_xibean.js               过期京豆自动兑换喜豆
 #  jd_unsubscriLive.js             取关所有主播
 #  jd_unsubscribe_xh.js            取关店铺和商品
@@ -36,10 +39,9 @@
 #  jd_angryKoi.py                  安静的锦鲤               (全民开红包)
 #  jd_ttpt.js                      天天拼图
 #  jd_qqxing.js                    QQ星系牧场               (执行时间较长并且API容易请求失败导致IP短时间内黑一会儿，建议仅指定前几个头部账号运行)
-#  jd_xqscjd.js                    写情书抽京豆
 #  jd_jchsign.js                   京车会签到
 #  jd_jdtj_winner.js               京东特价翻翻乐
-#  jd_jmf.js                       京东小魔方
+#  jd_mofang.js                    京东小魔方
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -70,6 +72,9 @@
 ##############################  近  期  删  除  ##############################
 
 # jd_zd.js
+# jd_try.js
+# jd_jmf.js
+# jd_xqscjd.js
 
 ##############################  京  东  到  家  ##############################
 
@@ -88,8 +93,8 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NEWLINE="\n          "
-UpdateDate="2021-12-22"
-UpdateContent="del  jd_zd.js"
+UpdateDate="2021-12-23"
+UpdateContent="add  jd_try_MyTrials.js(京东试用待领取通知)${NEWLINE}rpc  jd_try.js -> jd_try_xh.js jd_jmf.js -> jd_mofang.js${NEWLINE}del  jd_xqscjd.js"
 
 ## 作者
 author_list="Public passerby_b smiek2221 star261 shufflewzc X1a0He KingRan Dellear jiulan wuye999"
@@ -131,7 +136,7 @@ my_scripts_list_star261="jd_productZ4Brand.js"
 
 ## Facker
 scripts_base_url_shufflewzc=${ProxyJudge}https://raw.githubusercontent.com/shufflewzc/faker2/main/
-my_scripts_list_shufflewzc="jd_try.js jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_genz.js jd_nnfls.js jd_gold_sign.js jd_price.js jd_lxLottery.js jd_jddt.js jd_ttpt.js jd_jchsign.js jd_jmf.js"
+my_scripts_list_shufflewzc="jd_try_xh.js jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_genz.js jd_nnfls.js jd_gold_sign.js jd_price.js jd_lxLottery.js jd_jddt.js jd_ttpt.js jd_jchsign.js"
 
 ## X1a0He
 scripts_base_url_X1a0He=${ProxyJudge}https://raw.githubusercontent.com/X1a0He/jd_scripts_fixed/main/
@@ -139,7 +144,7 @@ my_scripts_list_X1a0He="jd_unsubscribe_xh.js"
 
 ## KingRan
 scripts_base_url_KingRan=${ProxyJudge}https://raw.githubusercontent.com/KingRan/JDJB/main/
-my_scripts_list_KingRan="jd_joy_park.js jd_joy_park_task.js jd_fanli.js jd_medal.js jd_beauty_ex.js jd_mofang_ex.js jd_xqscjd.js jd_jdtj_winner.js"
+my_scripts_list_KingRan="jd_joy_park.js jd_joy_park_task.js jd_fanli.js jd_medal.js jd_beauty_ex.js jd_mofang.js"
 
 ## Dellear
 scripts_base_url_Dellear=${ProxyJudge}https://raw.githubusercontent.com/Dellear/lost/main/extra/
@@ -147,7 +152,7 @@ my_scripts_list_Dellear="jd_bean_xibean.js"
 
 ## jiulan
 scripts_base_url_jiulan=${ProxyJudge}https://raw.githubusercontent.com/jiulan/platypus/main/scripts/
-my_scripts_list_jiulan="jd_joy_tx.js jd_jfcz.js"
+my_scripts_list_jiulan="jd_joy_tx.js jd_jfcz.js jd_jdtj_winner.js"
 
 ## wuye999
 scripts_base_url_wuye999=${ProxyJudge}https://raw.githubusercontent.com/wuye999/myScripts/main/jd/
@@ -230,7 +235,7 @@ for author in $author_list; do
       croname=$(echo "$name" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")
       script_cron_standard=$(cat $ScriptsDir/$name | grep "https" | awk '{if($1~/^[0-9]{1,2}/) print $1,$2,$3,$4,$5}' | sort -u | head -n 1)
       case $name in
-      jd_try.js)
+      jd_try_xh.js)
         script_cron="30 10 * * *" # 指定京东试用的定时
         ;;
       jd_unsubscribe_xh.js)
@@ -239,11 +244,11 @@ for author in $author_list; do
       jd_productZ4Brand.js)
         script_cron="5 20,21 * * *" # 指定特物Z的定时
         ;;
-      jd_mofang_ex.js)
-        script_cron='31 8 * * 1,3,5' # 魔方兑换
-        ;;
       jd_jchsign.js)
         script_cron="$(rand 1 59) $(rand 1 23) * * *" # 京车会签到，随机定时
+        ;;
+      jd_beauty_ex.js)
+        script_cron="$(rand 1 5) $(rand 6 8),$(rand 1 13),$(rand 18 20) * * * " # 美丽研究院兑换，随机定时
         ;;
       *)
         if [[ -z ${script_cron_standard} ]]; then
@@ -288,7 +293,7 @@ for del in ${DeleteCacheFiles}; do
 done
 
 ## 删除脚本和定时
-DeleteScripts="jd_zd.js"
+DeleteScripts="jd_zd.js jd_try.js jd_jmf.js jd_xqscjd.js"
 for del in ${DeleteScripts}; do
   [ -f $ScriptsDir/$del ] && rm -rf $ScriptsDir/$del && sed -i "/ $TaskCmd $(echo "$del" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")/d" $ListCrontabUser
 done
