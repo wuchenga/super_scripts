@@ -39,7 +39,7 @@ if ($.isNode()) {
     return;
     }
     console.log(`通用ID任务就位，准备开始薅豆\n`);
-    console.log(`活动地址：https://u.jd.com/vteZ5Zm，除脚本任务外还有一键开卡40豆`);
+    console.log(`活动地址：https://u.jd.com/vteZ5Zm  ，除脚本任务外还有一键开卡40豆`);
     for (let i = 0; i < cookiesArr.length; i++) {
        if (cookiesArr[i]) {
         await getUA();
