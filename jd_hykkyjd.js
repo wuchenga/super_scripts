@@ -1,8 +1,9 @@
 /*
 jdjoy通用任务脚本，来自互联网，未知作者大佬
+活动地址：https://u.jd.com/vteZ5Zm
 跑两遍
 */
-const $ = new Env('我爱520_赢京豆');
+const $ = new Env('会员开卡赢京豆');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const notify = $.isNode() ? require('./sendNotify') : '';
 let cookiesArr = [];
@@ -37,7 +38,8 @@ if ($.isNode()) {
     $.log(`没有通用ID任务，改日再来～`);
     return;
     }
-    console.log(`通用ID任务就位，准备开始薅豆`);
+    console.log(`通用ID任务就位，准备开始薅豆\n`);
+    console.log(`活动地址：https://u.jd.com/vteZ5Zm，除脚本任务外还有一键开卡40豆`);
     for (let i = 0; i < cookiesArr.length; i++) {
        if (cookiesArr[i]) {
         await getUA();
