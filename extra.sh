@@ -72,7 +72,6 @@
 ##############################  近  期  删  除  ##############################
 
 # jd_zd.js
-# jd_try.js
 # jd_jmf.js
 # jd_xqscjd.js
 
@@ -221,7 +220,7 @@ for author in $author_list; do
     eval url=$url_list$js
     eval name=$js
     eval formatname=$(echo $js | awk -F '/' '{print$NF}')
-    wget -q --no-check-certificate $url -O "$ScriptsDir/$name.new" -T 10
+    wget -q --no-check-certificate $url -O "$ScriptsDir/$name.new" -T 20
     if [ $? -eq 0 ]; then
       mv -f $ScriptsDir/$name.new $ScriptsDir/$name
       echo -e "$COMPLETE $formatname"
@@ -278,7 +277,7 @@ for author in $author_list; do
       fi
     else
       [ -f $ScriptsDir/$name.new ] && rm -f $ScriptsDir/$name.new
-      echo -e "[\033[31mERR!\033[0m] $formatname 更新失败"
+      echo -e "[${RED}FAIL${PLAIN}] $formatname 更新失败"
     fi
   done
   let index+=1
@@ -293,7 +292,7 @@ for del in ${DeleteCacheFiles}; do
 done
 
 ## 删除脚本和定时
-DeleteScripts="jd_zd.js jd_try.js jd_jmf.js jd_xqscjd.js"
+DeleteScripts="jd_zd.js jd_jmf.js jd_xqscjd.js"
 for del in ${DeleteScripts}; do
   [ -f $ScriptsDir/$del ] && rm -rf $ScriptsDir/$del && sed -i "/ $TaskCmd $(echo "$del" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")/d" $ListCrontabUser
 done
