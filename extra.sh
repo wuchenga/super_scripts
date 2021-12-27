@@ -1,6 +1,6 @@
 #!/bin/bash
-## Update: 2021-12-27
-## Content: add  jd_mofang_j.js(集魔方)
+## Update: 2021-12-28
+## Content: add  jd_wabao_help.py(发财挖宝互助)
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -41,6 +41,7 @@
 #  jd_jdtj_winner.js               京东特价翻翻乐
 #  jd_mofang.js                    京东小魔方
 #  jd_mofang_j.js                  大势新品赏-集魔方
+#  jd_wabao_help.py                发财挖宝互助
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -87,8 +88,8 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NEWLINE="\n          "
-UpdateDate="2021-12-27"
-UpdateContent="add  jd_mofang_j.js(集魔方)"
+UpdateDate="2021-12-28"
+UpdateContent="add  jd_wabao_help.py(发财挖宝互助)"
 
 ## 作者
 author_list="Public passerby_b smiek2221 star261 shufflewzc X1a0He KingRan Dellear jiulan wuye999"
@@ -150,7 +151,7 @@ my_scripts_list_jiulan="jd_joy_tx.js jd_jfcz.js jd_jdtj_winner.js"
 
 ## wuye999
 scripts_base_url_wuye999=${ProxyJudge}https://raw.githubusercontent.com/wuye999/myScripts/main/jd/
-my_scripts_list_wuye999="jd_angryKoi.py"
+my_scripts_list_wuye999="jd_angryKoi.py jd_wabao_help.py"
 
 ## he1pu
 scripts_base_url_he1pu=${ProxyJudge}https://raw.githubusercontent.com/he1pu/JDHelp/main/
