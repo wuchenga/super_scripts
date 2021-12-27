@@ -1,8 +1,6 @@
 #!/bin/bash
-## Update: 2021-12-23
-## Content: add  jd_try_MyTrials.js(京东试用待领取通知)
-##          rpc  jd_try.js -> jd_try_xh.js jd_jmf.js -> jd_mofang.js
-##          del  jd_xqscjd.js
+## Update: 2021-12-27
+## Content: add  jd_mofang_j.js(集魔方)
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -42,6 +40,7 @@
 #  jd_jchsign.js                   京车会签到
 #  jd_jdtj_winner.js               京东特价翻翻乐
 #  jd_mofang.js                    京东小魔方
+#  jd_mofang_j.js                  大势新品赏-集魔方
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -71,10 +70,6 @@
 
 ##############################  近  期  删  除  ##############################
 
-# jd_zd.js
-# jd_jmf.js
-# jd_xqscjd.js
-
 ##############################  京  东  到  家  ##############################
 
 ## jddj_bean.js                     鲜豆任务
@@ -92,8 +87,8 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NEWLINE="\n          "
-UpdateDate="2021-12-23"
-UpdateContent="add  jd_try_MyTrials.js(京东试用待领取通知)${NEWLINE}rpc  jd_try.js -> jd_try_xh.js jd_jmf.js -> jd_mofang.js${NEWLINE}del  jd_xqscjd.js"
+UpdateDate="2021-12-27"
+UpdateContent="add  jd_mofang_j.js(集魔方)"
 
 ## 作者
 author_list="Public passerby_b smiek2221 star261 shufflewzc X1a0He KingRan Dellear jiulan wuye999"
@@ -135,7 +130,7 @@ my_scripts_list_star261="jd_productZ4Brand.js"
 
 ## Facker
 scripts_base_url_shufflewzc=${ProxyJudge}https://raw.githubusercontent.com/shufflewzc/faker2/main/
-my_scripts_list_shufflewzc="jd_try_xh.js jd_try_MyTrials.js jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_genz.js jd_nnfls.js jd_gold_sign.js jd_price.js jd_lxLottery.js jd_jddt.js jd_ttpt.js jd_jchsign.js"
+my_scripts_list_shufflewzc="jd_try_xh.js jd_try_MyTrials.js jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_genz.js jd_nnfls.js jd_gold_sign.js jd_price.js jd_lxLottery.js jd_jddt.js jd_ttpt.js jd_jchsign.js jd_mofang_j.js"
 
 ## X1a0He
 scripts_base_url_X1a0He=${ProxyJudge}https://raw.githubusercontent.com/X1a0He/jd_scripts_fixed/main/
@@ -292,7 +287,7 @@ for del in ${DeleteCacheFiles}; do
 done
 
 ## 删除脚本和定时
-DeleteScripts="jd_zd.js jd_jmf.js jd_xqscjd.js"
+DeleteScripts=""
 for del in ${DeleteScripts}; do
   [ -f $ScriptsDir/$del ] && rm -rf $ScriptsDir/$del && sed -i "/ $TaskCmd $(echo "$del" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")/d" $ListCrontabUser
 done
