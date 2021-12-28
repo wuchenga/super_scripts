@@ -94,7 +94,7 @@ async function main() {
             }
             $.runTime++;
             await $.wait(2000);
-        }while (JSON.stringify($.activity) === '{}' && $.runTime < 10);
+        }while (JSON.stringify($.activity) === '{}' && $.runTime < 999);
         console.log(`任务列表：${activityID},获取成功`);
         $.moduleBaseInfo = $.activity.moduleBaseInfo;
         $.dailyTaskList = $.activity.dailyTask.taskList;

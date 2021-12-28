@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Update: 2021-12-28
-## Content: add  jd_wabao_help.py(发财挖宝互助)
+## Content: add  jd_wabao_help.py(发财挖宝互助) jd_sevenDay.js(超级无线店铺签到)
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -42,6 +42,7 @@
 #  jd_mofang.js                    京东小魔方
 #  jd_mofang_j.js                  大势新品赏-集魔方
 #  jd_wabao_help.py                发财挖宝互助
+#  jd_sevenDay.js                  超级无线店铺签到
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -89,10 +90,10 @@
 
 NEWLINE="\n          "
 UpdateDate="2021-12-28"
-UpdateContent="add  jd_wabao_help.py(发财挖宝互助)"
+UpdateContent="add  jd_wabao_help.py(发财挖宝互助) jd_sevenDay.js(超级无线店铺签到)"
 
 ## 作者
-author_list="Public passerby_b smiek2221 star261 shufflewzc X1a0He KingRan Dellear jiulan wuye999"
+author_list="Public passerby_b smiek2221 star261 shufflewzc X1a0He KingRan Dellear jiulan wuye999 mmnvnmm"
 author_name=(
   Public
   passerby-b
@@ -104,6 +105,7 @@ author_name=(
   Dellear
   jiulan
   wuye999
+  小埋
 )
 
 ## 定义下载代理 (非内置功能)
@@ -153,6 +155,10 @@ my_scripts_list_jiulan="jd_joy_tx.js jd_jfcz.js jd_jdtj_winner.js"
 scripts_base_url_wuye999=${ProxyJudge}https://raw.githubusercontent.com/wuye999/myScripts/main/jd/
 my_scripts_list_wuye999="jd_angryKoi.py jd_wabao_help.py"
 
+## 小埋
+scripts_base_url_mmnvnmm=${ProxyJudge}https://raw.githubusercontent.com/mmnvnmm/omo/master/
+my_scripts_list_mmnvnmm="jd_sevenDay.js"
+
 ## he1pu
 scripts_base_url_he1pu=${ProxyJudge}https://raw.githubusercontent.com/he1pu/JDHelp/main/
 my_scripts_list_he1pu=""
@@ -160,10 +166,6 @@ my_scripts_list_he1pu=""
 ## cdle
 scripts_base_url_cdle=${ProxyJudge}https://raw.githubusercontent.com/cdle/carry/main/
 my_scripts_list_cdle=""
-
-## 执意
-scripts_base_url_Ariszy=${ProxyJudge}https://raw.githubusercontent.com/Ariszy/Private-Script/master/JD/
-my_scripts_list_Ariszy=""
 
 ## curtinlv
 scripts_base_url_curtinlv=${ProxyJudge}https://raw.githubusercontent.com/curtinlv/JD-Script/main/
