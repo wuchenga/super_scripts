@@ -1,6 +1,6 @@
 #!/bin/bash
-## Update: 2021-12-28
-## Content: add  jd_wabao_help.py(发财挖宝互助) jd_sevenDay.js(超级无线店铺签到)
+## Update: 2021-12-29
+## Content: del  jd_mofang_j.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -40,7 +40,6 @@
 #  jd_jchsign.js                   京车会签到
 #  jd_jdtj_winner.js               京东特价翻翻乐
 #  jd_mofang.js                    京东小魔方
-#  jd_mofang_j.js                  大势新品赏-集魔方
 #  jd_wabao_help.py                发财挖宝互助
 #  jd_sevenDay.js                  超级无线店铺签到
 
@@ -67,10 +66,10 @@
 # "批量取关店铺和商品"
 #    export JD_UNSUB_GKEYWORDS="" # 商品类过滤关键词，多个用@分隔
 #    export JD_UNSUB_SKEYWORDS="" # 店铺类过滤关键词，多个用@分隔
-# "京享红包"
-#    export JX_CODE ""  # 指定京粉链接Code
 
 ##############################  近  期  删  除  ##############################
+
+# jd_mofang_j.js
 
 ##############################  京  东  到  家  ##############################
 
@@ -89,8 +88,8 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NEWLINE="\n          "
-UpdateDate="2021-12-28"
-UpdateContent="add  jd_wabao_help.py(发财挖宝互助) jd_sevenDay.js(超级无线店铺签到)"
+UpdateDate="2021-12-29"
+UpdateContent="del  jd_mofang_j.js"
 
 ## 作者
 author_list="Public passerby_b smiek2221 star261 shufflewzc X1a0He KingRan Dellear jiulan wuye999 mmnvnmm"
@@ -133,7 +132,7 @@ my_scripts_list_star261="jd_productZ4Brand.js"
 
 ## Facker
 scripts_base_url_shufflewzc=${ProxyJudge}https://raw.githubusercontent.com/shufflewzc/faker2/main/
-my_scripts_list_shufflewzc="jd_try_xh.js jd_try_MyTrials.js jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_genz.js jd_nnfls.js jd_gold_sign.js jd_price.js jd_lxLottery.js jd_jddt.js jd_ttpt.js jd_jchsign.js jd_mofang_j.js"
+my_scripts_list_shufflewzc="jd_try_xh.js jd_try_MyTrials.js jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_genz.js jd_nnfls.js jd_gold_sign.js jd_price.js jd_lxLottery.js jd_jddt.js jd_ttpt.js jd_jchsign.js"
 
 ## X1a0He
 scripts_base_url_X1a0He=${ProxyJudge}https://raw.githubusercontent.com/X1a0He/jd_scripts_fixed/main/
@@ -290,7 +289,7 @@ for del in ${DeleteCacheFiles}; do
 done
 
 ## 删除脚本和定时
-DeleteScripts=""
+DeleteScripts="jd_mofang_j.js"
 for del in ${DeleteScripts}; do
   [ -f $ScriptsDir/$del ] && rm -rf $ScriptsDir/$del && sed -i "/ $TaskCmd $(echo "$del" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")/d" $ListCrontabUser
 done
