@@ -1,6 +1,6 @@
 #!/bin/bash
-## Update: 2021-12-29
-## Content: del  jd_mofang_j.js
+## Update: 2021-12-31
+## Content: del  jd_mofang.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -39,7 +39,6 @@
 #  jd_qqxing.js                    QQ星系牧场               (执行时间较长并且API容易请求失败导致IP短时间内黑一会儿，建议仅指定前几个头部账号运行)
 #  jd_jchsign.js                   京车会签到
 #  jd_jdtj_winner.js               京东特价翻翻乐
-#  jd_mofang.js                    京东小魔方
 #  jd_wabao_help.py                发财挖宝互助
 #  jd_sevenDay.js                  超级无线店铺签到
 
@@ -69,7 +68,7 @@
 
 ##############################  近  期  删  除  ##############################
 
-# jd_mofang_j.js
+# jd_mofang.js
 
 ##############################  京  东  到  家  ##############################
 
@@ -88,8 +87,8 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NEWLINE="\n          "
-UpdateDate="2021-12-29"
-UpdateContent="del  jd_mofang_j.js"
+UpdateDate="2021-12-31"
+UpdateContent="del  jd_mofang.js"
 
 ## 作者
 author_list="Public passerby_b smiek2221 star261 shufflewzc X1a0He KingRan Dellear jiulan wuye999 mmnvnmm"
@@ -140,7 +139,7 @@ my_scripts_list_X1a0He="jd_unsubscribe_xh.js"
 
 ## KingRan
 scripts_base_url_KingRan=${ProxyJudge}https://raw.githubusercontent.com/KingRan/JDJB/main/
-my_scripts_list_KingRan="jd_joy_park.js jd_joy_park_task.js jd_fanli.js jd_medal.js jd_beauty_ex.js jd_mofang.js"
+my_scripts_list_KingRan="jd_joy_park.js jd_joy_park_task.js jd_fanli.js jd_medal.js"
 
 ## Dellear
 scripts_base_url_Dellear=${ProxyJudge}https://raw.githubusercontent.com/Dellear/lost/main/extra/
@@ -156,7 +155,7 @@ my_scripts_list_wuye999="jd_angryKoi.py jd_wabao_help.py"
 
 ## 小埋
 scripts_base_url_mmnvnmm=${ProxyJudge}https://raw.githubusercontent.com/mmnvnmm/omo/master/
-my_scripts_list_mmnvnmm="jd_sevenDay.js"
+my_scripts_list_mmnvnmm="jd_sevenDay.js jd_beauty_ex.js"
 
 ## he1pu
 scripts_base_url_he1pu=${ProxyJudge}https://raw.githubusercontent.com/he1pu/JDHelp/main/
@@ -248,7 +247,7 @@ for author in $author_list; do
         ;;
       *)
         if [[ -z ${script_cron_standard} ]]; then
-          tmp1=$(grep -E "cron|script-path|tag|\* \*|$name" $ScriptsDir/$name | head -1 | perl -pe '{s|[a-zA-Z\"\.\=\:\:\_]||g;}')
+          tmp1=$(grep -E "cron|script-path|tag|\* \*|$name" $ScriptsDir/$name | grep -E "^[1-9]" | head -1 | perl -pe '{s|[a-zA-Z\"\.\=\:\:\_]||g;}')
           ## 判断开头
           tmp2=$(echo "${tmp1}" | awk -F '[0-9]' '{print$1}' | sed 's/\*/\\*/g; s/\./\\./g')
           ## 判断表达式的第一个数字（分钟）
@@ -289,7 +288,7 @@ for del in ${DeleteCacheFiles}; do
 done
 
 ## 删除脚本和定时
-DeleteScripts="jd_mofang_j.js"
+DeleteScripts="jd_mofang.js"
 for del in ${DeleteScripts}; do
   [ -f $ScriptsDir/$del ] && rm -rf $ScriptsDir/$del && sed -i "/ $TaskCmd $(echo "$del" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")/d" $ListCrontabUser
 done
