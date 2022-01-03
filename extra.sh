@@ -1,6 +1,6 @@
 #!/bin/bash
-## Update: 2022-01-03
-## Content: add  jd_nh_sign.js(年货节签到) jd_m_sign.js(京东通天塔--签到)
+## Update: 2022-01-04
+## Content: add  jd_hwmh.js(运动户外盲盒活动)
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -42,6 +42,7 @@
 #  jd_sevenDay.js                  超级无线店铺签到
 #  jd_nh_sign.js                   年货节签到
 #  jd_m_sign.js                    京东通天塔--签到
+#  jd_hwmh.js                      运动户外盲盒活动
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -86,8 +87,8 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NEWLINE="\n          "
-UpdateDate="2022-01-03"
-UpdateContent="add  jd_nh_sign.js(年货节签到) jd_m_sign.js(京东通天塔--签到)"
+UpdateDate="2022-01-04"
+UpdateContent="add  jd_hwmh.js(运动户外盲盒活动)"
 
 ## 作者
 author_list="Public passerby_b smiek2221 star261 shufflewzc X1a0He KingRan Dellear jiulan wuye999 mmnvnmm"
@@ -130,7 +131,7 @@ my_scripts_list_star261="jd_productZ4Brand.js jd_nh_sign.js"
 
 ## Facker
 scripts_base_url_shufflewzc=${ProxyJudge}https://raw.githubusercontent.com/shufflewzc/faker2/main/
-my_scripts_list_shufflewzc="jd_try_xh.js jd_try_MyTrials.js jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_genz.js jd_nnfls.js jd_gold_sign.js jd_price.js jd_lxLottery.js jd_jddt.js jd_ttpt.js jd_jchsign.js jd_m_sign.js"
+my_scripts_list_shufflewzc="jd_try_xh.js jd_try_MyTrials.js jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_genz.js jd_nnfls.js jd_gold_sign.js jd_price.js jd_lxLottery.js jd_jddt.js jd_ttpt.js jd_jchsign.js jd_m_sign.js jd_hwmh.js"
 
 ## X1a0He
 scripts_base_url_X1a0He=${ProxyJudge}https://raw.githubusercontent.com/X1a0He/jd_scripts_fixed/main/
