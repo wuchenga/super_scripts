@@ -1,6 +1,6 @@
 #!/bin/bash
 ## Update: 2022-01-04
-## Content: add  jd_hwmh.js(运动户外盲盒活动)
+## Content: add  gua_UnknownTask5.js(运动户外盲盒活动)
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -42,7 +42,7 @@
 #  jd_sevenDay.js                  超级无线店铺签到
 #  jd_nh_sign.js                   年货节签到
 #  jd_m_sign.js                    京东通天塔--签到
-#  jd_hwmh.js                      运动户外盲盒活动
+#  gua_UnknownTask5.js             运动户外盲盒活动
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -88,7 +88,7 @@
 
 NEWLINE="\n          "
 UpdateDate="2022-01-04"
-UpdateContent="add  jd_hwmh.js(运动户外盲盒活动)"
+UpdateContent="add  gua_UnknownTask5.js(运动户外盲盒活动)"
 
 ## 作者
 author_list="Public passerby_b smiek2221 star261 shufflewzc X1a0He KingRan Dellear jiulan wuye999 mmnvnmm"
@@ -123,7 +123,7 @@ my_scripts_list_passerby_b="jddj_fruit.js jddj_fruit_collectWater.js jddj_bean.j
 
 ## 青蛙
 scripts_base_url_smiek2221=${ProxyJudge}https://raw.githubusercontent.com/smiek2121/scripts/master/
-my_scripts_list_smiek2221="jd_sign_graphics.js sign_graphics_validate.js JDJRValidator_Pure.js gua_UnknownTask9.js"
+my_scripts_list_smiek2221="jd_sign_graphics.js sign_graphics_validate.js JDJRValidator_Pure.js gua_UnknownTask9.js gua_UnknownTask5.js"
 
 ## star261
 scripts_base_url_star261=${ProxyJudge}https://raw.githubusercontent.com/star261/jd/main/scripts/
@@ -131,7 +131,7 @@ my_scripts_list_star261="jd_productZ4Brand.js jd_nh_sign.js"
 
 ## Facker
 scripts_base_url_shufflewzc=${ProxyJudge}https://raw.githubusercontent.com/shufflewzc/faker2/main/
-my_scripts_list_shufflewzc="jd_try_xh.js jd_try_MyTrials.js jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_genz.js jd_nnfls.js jd_gold_sign.js jd_price.js jd_lxLottery.js jd_jddt.js jd_ttpt.js jd_jchsign.js jd_m_sign.js jd_hwmh.js"
+my_scripts_list_shufflewzc="jd_try_xh.js jd_try_MyTrials.js jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_genz.js jd_nnfls.js jd_gold_sign.js jd_price.js jd_lxLottery.js jd_jddt.js jd_ttpt.js jd_jchsign.js jd_m_sign.js"
 
 ## X1a0He
 scripts_base_url_X1a0He=${ProxyJudge}https://raw.githubusercontent.com/X1a0He/jd_scripts_fixed/main/
@@ -288,7 +288,7 @@ for del in ${DeleteCacheFiles}; do
 done
 
 ## 删除脚本和定时
-DeleteScripts=""
+DeleteScripts="jd_hwmh.js"
 for del in ${DeleteScripts}; do
   [ -f $ScriptsDir/$del ] && rm -rf $ScriptsDir/$del && sed -i "/ $TaskCmd $(echo "$del" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")/d" $ListCrontabUser
 done
