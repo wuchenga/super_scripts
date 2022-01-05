@@ -1,6 +1,6 @@
 #!/bin/bash
-## Update: 2022-01-04
-## Content: add  gua_UnknownTask5.js(运动户外盲盒活动)
+## Update: 2022-01-06
+## Content: del  gua_UnknownTask5.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -70,6 +70,8 @@
 
 ##############################  近  期  删  除  ##############################
 
+# gua_UnknownTask5.js
+
 ##############################  京  东  到  家  ##############################
 
 ## jddj_bean.js                     鲜豆任务
@@ -87,8 +89,8 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NEWLINE="\n          "
-UpdateDate="2022-01-04"
-UpdateContent="add  gua_UnknownTask5.js(运动户外盲盒活动)"
+UpdateDate="2022-01-06"
+UpdateContent="del  gua_UnknownTask5.js"
 
 ## 作者
 author_list="Public passerby_b smiek2221 star261 shufflewzc X1a0He KingRan Dellear jiulan wuye999 mmnvnmm"
@@ -123,7 +125,7 @@ my_scripts_list_passerby_b="jddj_fruit.js jddj_fruit_collectWater.js jddj_bean.j
 
 ## 青蛙
 scripts_base_url_smiek2221=${ProxyJudge}https://raw.githubusercontent.com/smiek2121/scripts/master/
-my_scripts_list_smiek2221="jd_sign_graphics.js sign_graphics_validate.js JDJRValidator_Pure.js gua_UnknownTask9.js gua_UnknownTask5.js"
+my_scripts_list_smiek2221="jd_sign_graphics.js sign_graphics_validate.js JDJRValidator_Pure.js gua_UnknownTask9.js"
 
 ## star261
 scripts_base_url_star261=${ProxyJudge}https://raw.githubusercontent.com/star261/jd/main/scripts/
@@ -288,7 +290,7 @@ for del in ${DeleteCacheFiles}; do
 done
 
 ## 删除脚本和定时
-DeleteScripts="jd_hwmh.js"
+DeleteScripts="gua_UnknownTask5.js"
 for del in ${DeleteScripts}; do
   [ -f $ScriptsDir/$del ] && rm -rf $ScriptsDir/$del && sed -i "/ $TaskCmd $(echo "$del" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")/d" $ListCrontabUser
 done
