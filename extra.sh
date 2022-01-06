@@ -1,6 +1,7 @@
 #!/bin/bash
 ## Update: 2022-01-06
-## Content: del  gua_UnknownTask5.js
+## Content: add  jd_mofang_ex.js(京东小魔方--收集兑换) 
+##          del  gua_UnknownTask5.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -42,7 +43,7 @@
 #  jd_sevenDay.js                  超级无线店铺签到
 #  jd_nh_sign.js                   年货节签到
 #  jd_m_sign.js                    京东通天塔--签到
-#  gua_UnknownTask5.js             运动户外盲盒活动
+#  jd_mofang_ex.js                 京东小魔方--收集兑换
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -90,7 +91,7 @@
 
 NEWLINE="\n          "
 UpdateDate="2022-01-06"
-UpdateContent="del  gua_UnknownTask5.js"
+UpdateContent="add  jd_mofang_ex.js(京东小魔方--收集兑换)${NEWLINE}del  gua_UnknownTask5.js"
 
 ## 作者
 author_list="Public passerby_b smiek2221 star261 shufflewzc X1a0He KingRan Dellear jiulan wuye999 mmnvnmm"
