@@ -1,7 +1,6 @@
 #!/bin/bash
-## Update: 2022-01-06
-## Content: add  jd_mofang_ex.js(京东小魔方--收集兑换) 
-##          del  gua_UnknownTask5.js
+# Update: 2022-01-08
+# Content: add  jd_tls.js(特仑苏京东超级品牌日)
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -44,6 +43,7 @@
 #  jd_nh_sign.js                   年货节签到
 #  jd_m_sign.js                    京东通天塔--签到
 #  jd_mofang_ex.js                 京东小魔方--收集兑换
+#  jd_tls.js                       特仑苏京东超级品牌日
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -71,8 +71,6 @@
 
 ##############################  近  期  删  除  ##############################
 
-# gua_UnknownTask5.js
-
 ##############################  京  东  到  家  ##############################
 
 ## jddj_bean.js                     鲜豆任务
@@ -90,8 +88,8 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NEWLINE="\n          "
-UpdateDate="2022-01-06"
-UpdateContent="add  jd_mofang_ex.js(京东小魔方--收集兑换)${NEWLINE}del  gua_UnknownTask5.js"
+UpdateDate="2022-01-08"
+UpdateContent="add  jd_tls.js(特仑苏京东超级品牌日)"
 
 ## 作者
 author_list="Public passerby_b smiek2221 star261 shufflewzc X1a0He KingRan Dellear jiulan wuye999 mmnvnmm"
@@ -130,7 +128,7 @@ my_scripts_list_smiek2221="jd_sign_graphics.js sign_graphics_validate.js JDJRVal
 
 ## star261
 scripts_base_url_star261=${ProxyJudge}https://raw.githubusercontent.com/star261/jd/main/scripts/
-my_scripts_list_star261="jd_productZ4Brand.js jd_nh_sign.js"
+my_scripts_list_star261="jd_productZ4Brand.js jd_nh_sign.js jd_tls.js"
 
 ## Facker
 scripts_base_url_shufflewzc=${ProxyJudge}https://raw.githubusercontent.com/shufflewzc/faker2/main/
@@ -291,7 +289,7 @@ for del in ${DeleteCacheFiles}; do
 done
 
 ## 删除脚本和定时
-DeleteScripts="gua_UnknownTask5.js"
+DeleteScripts=""
 for del in ${DeleteScripts}; do
   [ -f $ScriptsDir/$del ] && rm -rf $ScriptsDir/$del && sed -i "/ $TaskCmd $(echo "$del" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")/d" $ListCrontabUser
 done
