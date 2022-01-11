@@ -1,13 +1,16 @@
 #!/bin/bash
-# Update: 2022-01-11
-# Content: add  jd_travel.js(炸年兽) jd_xiaolong.js(骁龙) jd_super_box.js(京东超级盒子)
+# Update: 2022-01-12
+# Content: add  jd_bean_change.js(京东资产变动强化版) jd_bzlshdgt.js(把智能生活带给TA) jd_mpdzcar.js(京东汽车)
+#          rpc  jd_super_box.js->jd_cjhz.js jd_try_xh.js->jd_try.js jd_try_MyTrials.js->jd_try_notify.py
+#          del  jd_travel.js jd_tls.js jd_genz.js jd_jddt.js jd_ttpt.js jd_jchsign.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
 
 #  jd_price.js                     京东价保
-#  jd_try_xh.js                    京东试用
-#  jd_try_MyTrials.js              京东试用待领取通知
+#  jd_try.js                       京东试用
+#  jd_try_notify.py                京东试用待领取通知
+#  jd_bean_change.js               京东资产变动强化版
 #  jd_bean_xibean.js               过期京豆自动兑换喜豆
 #  jd_unsubscriLive.js             取关所有主播
 #  jd_unsubscribe_xh.js            取关店铺和商品
@@ -22,11 +25,9 @@
 #  jd_joy_park.js                  汪汪乐园
 #  jd_joy_park_task.js             汪汪乐园每日任务
 #  jd_dwapp.js                     积分换话费
-#  jd_genz.js                      芥么赚豪礼
 #  jd_nnfls.js                     牛牛福利社
 #  jd_fanli.js                     京东饭粒
 #  jd_medal.js                     农场集勋章
-#  jd_jddt.js                      京东答题领金豆
 #  jd_gold_sign.js                 京东金榜签到
 #  jd_beauty_ex.js                 美丽研究院兑换京豆
 #  jd_joy_tx.js                    汪汪乐园提现
@@ -34,19 +35,17 @@
 #  gua_UnknownTask9.js             发现好货
 #  jd_jfcz.js                      见缝插针
 #  jd_angryKoi.py                  安静的锦鲤               (全民开红包)
-#  jd_ttpt.js                      天天拼图
 #  jd_qqxing.js                    QQ星系牧场               (执行时间较长并且API容易请求失败导致IP短时间内黑一会儿，建议仅指定前几个头部账号运行)
-#  jd_jchsign.js                   京车会签到
 #  jd_jdtj_winner.js               京东特价翻翻乐
 #  jd_wabao_help.py                发财挖宝互助
 #  jd_sevenDay.js                  超级无线店铺签到
 #  jd_nh_sign.js                   年货节签到
 #  jd_m_sign.js                    京东通天塔--签到
 #  jd_mofang_ex.js                 京东小魔方--收集兑换
-#  jd_tls.js                       特仑苏京东超级品牌日
-#  jd_travel.js                    炸年兽
 #  jd_xiaolong.js                  骁龙
-#  jd_super_box.js                 京东超级盒子
+#  jd_cjhz.js                      京东超级盒子
+#  jd_bzlshdgt.js                  把智能生活带给TA
+#  jd_mpdzcar.js                   京东汽车
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -74,6 +73,16 @@
 
 ##############################  近  期  删  除  ##############################
 
+# jd_travel.js
+# jd_super_box.js
+# jd_tls.js
+# jd_try_xh.js
+# jd_try_MyTrials.js
+# jd_genz.js
+# jd_jddt.js
+# jd_ttpt.js
+# jd_jchsign.js
+
 ##############################  京  东  到  家  ##############################
 
 ## jddj_bean.js                     鲜豆任务
@@ -91,11 +100,11 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NEWLINE="\n          "
-UpdateDate="2022-01-11"
-UpdateContent="add  jd_travel.js(炸年兽) jd_xiaolong.js(骁龙) jd_super_box.js(京东超级盒子)"
+UpdateDate="2022-01-12"
+UpdateContent="add  jd_bean_change.js(京东资产变动强化版) jd_bzlshdgt.js(把智能生活带给TA) jd_mpdzcar.js(京东汽车)${NEWLINE}rpc  jd_super_box.js->jd_cjhz.js jd_try_xh.js->jd_try.js jd_try_MyTrials.js->jd_try_notify.py${NEWLINE}del  jd_travel.js jd_tls.js jd_genz.js jd_jddt.js jd_ttpt.js jd_jchsign.js"
 
 ## 作者
-author_list="Public passerby_b smiek2221 star261 shufflewzc X1a0He KingRan Dellear jiulan wuye999 mmnvnmm"
+author_list="Public passerby_b smiek2221 star261 shufflewzc X1a0He KingRan Dellear jiulan wuye999 mmnvnmm ccwav"
 author_name=(
   Public
   passerby-b
@@ -108,6 +117,7 @@ author_name=(
   jiulan
   wuye999
   小埋
+  ccwav
 )
 
 ## 定义下载代理 (非内置功能)
@@ -131,11 +141,11 @@ my_scripts_list_smiek2221="jd_sign_graphics.js sign_graphics_validate.js JDJRVal
 
 ## star261
 scripts_base_url_star261=${ProxyJudge}https://raw.githubusercontent.com/star261/jd/main/scripts/
-my_scripts_list_star261="jd_productZ4Brand.js jd_nh_sign.js jd_tls.js jd_xiaolong.js"
+my_scripts_list_star261="jd_productZ4Brand.js jd_nh_sign.js jd_xiaolong.js"
 
 ## Facker
 scripts_base_url_shufflewzc=${ProxyJudge}https://raw.githubusercontent.com/shufflewzc/faker2/main/
-my_scripts_list_shufflewzc="jd_try_xh.js jd_try_MyTrials.js jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_genz.js jd_nnfls.js jd_gold_sign.js jd_price.js jd_lxLottery.js jd_jddt.js jd_ttpt.js jd_jchsign.js jd_m_sign.js"
+my_scripts_list_shufflewzc="jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_nnfls.js jd_gold_sign.js jd_price.js jd_lxLottery.js jd_m_sign.js jd_bzlshdgt.js"
 
 ## X1a0He
 scripts_base_url_X1a0He=${ProxyJudge}https://raw.githubusercontent.com/X1a0He/jd_scripts_fixed/main/
@@ -143,7 +153,7 @@ my_scripts_list_X1a0He="jd_unsubscribe_xh.js"
 
 ## KingRan
 scripts_base_url_KingRan=${ProxyJudge}https://raw.githubusercontent.com/KingRan/JDJB/main/
-my_scripts_list_KingRan="jd_joy_park.js jd_joy_park_task.js jd_fanli.js jd_medal.js"
+my_scripts_list_KingRan="jd_joy_park.js jd_joy_park_task.js jd_fanli.js jd_medal.js jd_cjhz.js"
 
 ## Dellear
 scripts_base_url_Dellear=${ProxyJudge}https://raw.githubusercontent.com/Dellear/lost/main/extra/
@@ -159,7 +169,11 @@ my_scripts_list_wuye999="jd_angryKoi.py jd_wabao_help.py"
 
 ## 小埋
 scripts_base_url_mmnvnmm=${ProxyJudge}https://raw.githubusercontent.com/mmnvnmm/omo/master/
-my_scripts_list_mmnvnmm="jd_sevenDay.js jd_beauty_ex.js jd_travel.js"
+my_scripts_list_mmnvnmm="jd_sevenDay.js jd_beauty_ex.js jd_mpdzcar.js"
+
+## ccwav
+scripts_base_url_ccwav=${ProxyJudge}https://raw.githubusercontent.com/ccwav/QLScript2/main/
+my_scripts_list_ccwav="jd_bean_change.js"
 
 ## he1pu
 scripts_base_url_he1pu=${ProxyJudge}https://raw.githubusercontent.com/he1pu/JDHelp/main/
@@ -292,7 +306,7 @@ for del in ${DeleteCacheFiles}; do
 done
 
 ## 删除脚本和定时
-DeleteScripts=""
+DeleteScripts="jd_travel.js jd_super_box.js jd_tls.js jd_try_xh.js jd_try_MyTrials.js jd_genz.js jd_jddt.js jd_ttpt.js jd_jchsign.js"
 for del in ${DeleteScripts}; do
   [ -f $ScriptsDir/$del ] && rm -rf $ScriptsDir/$del && sed -i "/ $TaskCmd $(echo "$del" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")/d" $ListCrontabUser
 done
