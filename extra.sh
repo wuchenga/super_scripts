@@ -306,7 +306,7 @@ for del in ${DeleteCacheFiles}; do
 done
 
 ## 删除脚本和定时
-DeleteScripts="jd_travel.js jd_super_box.js jd_tls.js jd_try_xh.js jd_try_MyTrials.js jd_genz.js jd_jddt.js jd_ttpt.js jd_jchsign.js"
+DeleteScripts="jd_super_box.js jd_tls.js jd_try_xh.js jd_try_MyTrials.js jd_genz.js jd_jddt.js jd_ttpt.js jd_jchsign.js"
 for del in ${DeleteScripts}; do
   [ -f $ScriptsDir/$del ] && rm -rf $ScriptsDir/$del && sed -i "/ $TaskCmd $(echo "$del" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")/d" $ListCrontabUser
 done
