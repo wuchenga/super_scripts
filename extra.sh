@@ -119,7 +119,7 @@ fi
 
 ## Public
 scripts_base_url_Public=https://gitee.com/SuperManito/scripts/raw/master/
-my_scripts_list_Public="jd_shop_sign.js jd_super_redrain.js jd_half_redrain.js jd_qqxing.js jd_travel.js jd_super_box.js"
+my_scripts_list_Public="jd_shop_sign.js jd_super_redrain.js jd_half_redrain.js jd_qqxing.js  jd_super_box.js"
 
 ## 京东到家
 scripts_base_url_passerby_b=${ProxyJudge}https://raw.githubusercontent.com/passerby-b/JDDJ/main/
@@ -159,7 +159,7 @@ my_scripts_list_wuye999="jd_angryKoi.py jd_wabao_help.py"
 
 ## 小埋
 scripts_base_url_mmnvnmm=${ProxyJudge}https://raw.githubusercontent.com/mmnvnmm/omo/master/
-my_scripts_list_mmnvnmm="jd_sevenDay.js jd_beauty_ex.js"
+my_scripts_list_mmnvnmm="jd_sevenDay.js jd_beauty_ex.js jd_travel.js"
 
 ## he1pu
 scripts_base_url_he1pu=${ProxyJudge}https://raw.githubusercontent.com/he1pu/JDHelp/main/
