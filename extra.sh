@@ -1,6 +1,6 @@
 #!/bin/bash
 # Update: 2022-01-11
-# Content: add  jd_travel.js(炸年兽)  jd_xiaolong.js(骁龙)
+# Content: add  jd_travel.js(炸年兽) jd_xiaolong.js(骁龙) jd_super_box.js(京东超级盒子)
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -46,6 +46,7 @@
 #  jd_tls.js                       特仑苏京东超级品牌日
 #  jd_travel.js                    炸年兽
 #  jd_xiaolong.js                  骁龙
+#  jd_super_box.js                 京东超级盒子
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -91,7 +92,7 @@
 
 NEWLINE="\n          "
 UpdateDate="2022-01-11"
-UpdateContent="add  jd_travel.js(炸年兽)  jd_xiaolong.js(骁龙)"
+UpdateContent="add  jd_travel.js(炸年兽) jd_xiaolong.js(骁龙) jd_super_box.js(京东超级盒子)"
 
 ## 作者
 author_list="Public passerby_b smiek2221 star261 shufflewzc X1a0He KingRan Dellear jiulan wuye999 mmnvnmm"
@@ -118,7 +119,7 @@ fi
 
 ## Public
 scripts_base_url_Public=https://gitee.com/SuperManito/scripts/raw/master/
-my_scripts_list_Public="jd_shop_sign.js jd_super_redrain.js jd_half_redrain.js jd_qqxing.js jd_travel.js"
+my_scripts_list_Public="jd_shop_sign.js jd_super_redrain.js jd_half_redrain.js jd_qqxing.js jd_travel.js jd_super_box.js"
 
 ## 京东到家
 scripts_base_url_passerby_b=${ProxyJudge}https://raw.githubusercontent.com/passerby-b/JDDJ/main/
