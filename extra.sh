@@ -1,8 +1,6 @@
 #!/bin/bash
-# Update: 2022-01-12
-# Content: add  jd_bean_change.js(京东资产变动强化版) jd_bzlshdgt.js(把智能生活带给TA) jd_mpdzcar.js(京东汽车)
-#          rpc  jd_super_box.js->jd_cjhz.js jd_try_xh.js->jd_try.js jd_try_MyTrials.js->jd_try_notify.py
-#          del  jd_travel.js jd_tls.js jd_genz.js jd_jddt.js jd_ttpt.js jd_jchsign.js
+# Update: 2022-01-14
+# Content: add  jd_bt_sign.js(白条抽奖) jd_ttysq.js(天天压岁钱) jd_dns_shop.js(全民炸年兽店铺大富翁)
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -35,7 +33,7 @@
 #  gua_UnknownTask9.js             发现好货
 #  jd_jfcz.js                      见缝插针
 #  jd_angryKoi.py                  安静的锦鲤               (全民开红包)
-#  jd_qqxing.js                    QQ星系牧场               (执行时间较长并且API容易请求失败导致IP短时间内黑一会儿，建议仅指定前几个头部账号运行)
+#  jd_qqxing.js                    QQ星系牧场               (执行时间较长并且API容易请求失败，建议仅指定前几个头部账号运行)
 #  jd_jdtj_winner.js               京东特价翻翻乐
 #  jd_wabao_help.py                发财挖宝互助
 #  jd_sevenDay.js                  超级无线店铺签到
@@ -46,6 +44,9 @@
 #  jd_cjhz.js                      京东超级盒子
 #  jd_bzlshdgt.js                  把智能生活带给TA
 #  jd_mpdzcar.js                   京东汽车
+#  jd_bt_sign.js                   白条抽奖
+#  jd_ttysq.js                     天天压岁钱
+#  jd_dns_shop.js                  全民炸年兽店铺大富翁
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -73,16 +74,6 @@
 
 ##############################  近  期  删  除  ##############################
 
-# jd_travel.js
-# jd_super_box.js
-# jd_tls.js
-# jd_try_xh.js
-# jd_try_MyTrials.js
-# jd_genz.js
-# jd_jddt.js
-# jd_ttpt.js
-# jd_jchsign.js
-
 ##############################  京  东  到  家  ##############################
 
 ## jddj_bean.js                     鲜豆任务
@@ -100,8 +91,8 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NEWLINE="\n          "
-UpdateDate="2022-01-12"
-UpdateContent="add  jd_bean_change.js(京东资产变动强化版) jd_bzlshdgt.js(把智能生活带给TA) jd_mpdzcar.js(京东汽车)${NEWLINE}rpc  jd_super_box.js->jd_cjhz.js jd_try_xh.js->jd_try.js jd_try_MyTrials.js->jd_try_notify.py${NEWLINE}del  jd_travel.js jd_tls.js jd_genz.js jd_jddt.js jd_ttpt.js jd_jchsign.js"
+UpdateDate="2022-01-14"
+UpdateContent="add  jd_bt_sign.js(白条抽奖) jd_ttysq.js(天天压岁钱) jd_dns_shop.js(全民炸年兽店铺大富翁)"
 
 ## 作者
 author_list="Public passerby_b smiek2221 star261 shufflewzc X1a0He KingRan Dellear jiulan wuye999 mmnvnmm ccwav"
@@ -141,11 +132,11 @@ my_scripts_list_smiek2221="jd_sign_graphics.js sign_graphics_validate.js JDJRVal
 
 ## star261
 scripts_base_url_star261=${ProxyJudge}https://raw.githubusercontent.com/star261/jd/main/scripts/
-my_scripts_list_star261="jd_productZ4Brand.js jd_nh_sign.js jd_xiaolong.js"
+my_scripts_list_star261="jd_productZ4Brand.js jd_nh_sign.js jd_xiaolong.js jd_dns_shop.js"
 
 ## Facker
 scripts_base_url_shufflewzc=${ProxyJudge}https://raw.githubusercontent.com/shufflewzc/faker2/main/
-my_scripts_list_shufflewzc="jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_nnfls.js jd_gold_sign.js jd_price.js jd_lxLottery.js jd_m_sign.js jd_bzlshdgt.js"
+my_scripts_list_shufflewzc="jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_nnfls.js jd_gold_sign.js jd_price.js jd_lxLottery.js jd_m_sign.js jd_bzlshdgt.js jd_bt_sign.js jd_ttysq.js"
 
 ## X1a0He
 scripts_base_url_X1a0He=${ProxyJudge}https://raw.githubusercontent.com/X1a0He/jd_scripts_fixed/main/
@@ -306,7 +297,7 @@ for del in ${DeleteCacheFiles}; do
 done
 
 ## 删除脚本和定时
-DeleteScripts="jd_super_box.js jd_tls.js jd_try_xh.js jd_try_MyTrials.js jd_genz.js jd_jddt.js jd_ttpt.js jd_jchsign.js"
+DeleteScripts=""
 for del in ${DeleteScripts}; do
   [ -f $ScriptsDir/$del ] && rm -rf $ScriptsDir/$del && sed -i "/ $TaskCmd $(echo "$del" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")/d" $ListCrontabUser
 done
