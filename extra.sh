@@ -1,6 +1,7 @@
 #!/bin/bash
-# Update: 2022-01-14
-# Content: add  jd_bt_sign.js(白条抽奖) jd_ttysq.js(天天压岁钱) jd_dns_shop.js(全民炸年兽店铺大富翁)
+# Update: 2022-01-15
+# Content: add  jd_babel_sign.js(通天塔签到共建)
+#          rpc  jd_ttysq.js -> jx_ttysq.js
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -45,8 +46,9 @@
 #  jd_bzlshdgt.js                  把智能生活带给TA
 #  jd_mpdzcar.js                   京东汽车
 #  jd_bt_sign.js                   白条抽奖
-#  jd_ttysq.js                     天天压岁钱
+#  jx_ttysq.js                     天天压岁钱
 #  jd_dns_shop.js                  全民炸年兽店铺大富翁
+#  jd_babel_sign.js                通天塔签到共建
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -74,6 +76,8 @@
 
 ##############################  近  期  删  除  ##############################
 
+# jd_ttysq.js
+
 ##############################  京  东  到  家  ##############################
 
 ## jddj_bean.js                     鲜豆任务
@@ -91,8 +95,8 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NEWLINE="\n          "
-UpdateDate="2022-01-14"
-UpdateContent="add  jd_bt_sign.js(白条抽奖) jd_ttysq.js(天天压岁钱) jd_dns_shop.js(全民炸年兽店铺大富翁)"
+UpdateDate="2022-01-15"
+UpdateContent="add  jd_babel_sign.js(通天塔签到共建)${NEWLINE}rpc  jd_ttysq.js -> jx_ttysq.js"
 
 ## 作者
 author_list="Public passerby_b smiek2221 star261 shufflewzc X1a0He KingRan Dellear jiulan wuye999 mmnvnmm ccwav"
@@ -136,7 +140,7 @@ my_scripts_list_star261="jd_productZ4Brand.js jd_nh_sign.js jd_xiaolong.js jd_dn
 
 ## Facker
 scripts_base_url_shufflewzc=${ProxyJudge}https://raw.githubusercontent.com/shufflewzc/faker2/main/
-my_scripts_list_shufflewzc="jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_nnfls.js jd_gold_sign.js jd_price.js jd_lxLottery.js jd_m_sign.js jd_bzlshdgt.js jd_bt_sign.js jd_ttysq.js"
+my_scripts_list_shufflewzc="jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_nnfls.js jd_gold_sign.js jd_price.js jd_lxLottery.js jd_m_sign.js jd_bzlshdgt.js jd_bt_sign.js jx_ttysq.js jd_babel_sign.js"
 
 ## X1a0He
 scripts_base_url_X1a0He=${ProxyJudge}https://raw.githubusercontent.com/X1a0He/jd_scripts_fixed/main/
@@ -297,7 +301,7 @@ for del in ${DeleteCacheFiles}; do
 done
 
 ## 删除脚本和定时
-DeleteScripts=""
+DeleteScripts="jd_ttysq.js"
 for del in ${DeleteScripts}; do
   [ -f $ScriptsDir/$del ] && rm -rf $ScriptsDir/$del && sed -i "/ $TaskCmd $(echo "$del" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")/d" $ListCrontabUser
 done
