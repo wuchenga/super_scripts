@@ -2,6 +2,7 @@
 # Update: 2022-01-15
 # Content: add  jd_babel_sign.js(通天塔签到共建)
 #          rpc  jd_ttysq.js -> jx_ttysq.js
+#          del  jd_bzlshdgt.js jd_wabao_help.py
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -36,14 +37,12 @@
 #  jd_angryKoi.py                  安静的锦鲤               (全民开红包)
 #  jd_qqxing.js                    QQ星系牧场               (执行时间较长并且API容易请求失败，建议仅指定前几个头部账号运行)
 #  jd_jdtj_winner.js               京东特价翻翻乐
-#  jd_wabao_help.py                发财挖宝互助
 #  jd_sevenDay.js                  超级无线店铺签到
 #  jd_nh_sign.js                   年货节签到
 #  jd_m_sign.js                    京东通天塔--签到
 #  jd_mofang_ex.js                 京东小魔方--收集兑换
 #  jd_xiaolong.js                  骁龙
 #  jd_cjhz.js                      京东超级盒子
-#  jd_bzlshdgt.js                  把智能生活带给TA
 #  jd_mpdzcar.js                   京东汽车
 #  jd_bt_sign.js                   白条抽奖
 #  jx_ttysq.js                     天天压岁钱
@@ -77,6 +76,8 @@
 ##############################  近  期  删  除  ##############################
 
 # jd_ttysq.js
+# jd_bzlshdgt.js
+# jd_wabao_help.py
 
 ##############################  京  东  到  家  ##############################
 
@@ -96,7 +97,7 @@
 
 NEWLINE="\n          "
 UpdateDate="2022-01-15"
-UpdateContent="add  jd_babel_sign.js(通天塔签到共建)${NEWLINE}rpc  jd_ttysq.js -> jx_ttysq.js"
+UpdateContent="add  jd_babel_sign.js(通天塔签到共建)${NEWLINE}rpc  jd_ttysq.js -> jx_ttysq.jsdel${NEWLINE}jd_bzlshdgt.js jd_wabao_help.py"
 
 ## 作者
 author_list="Public passerby_b smiek2221 star261 shufflewzc X1a0He KingRan Dellear jiulan wuye999 mmnvnmm ccwav"
@@ -140,7 +141,7 @@ my_scripts_list_star261="jd_productZ4Brand.js jd_nh_sign.js jd_xiaolong.js jd_dn
 
 ## Facker
 scripts_base_url_shufflewzc=${ProxyJudge}https://raw.githubusercontent.com/shufflewzc/faker2/main/
-my_scripts_list_shufflewzc="jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_nnfls.js jd_gold_sign.js jd_price.js jd_lxLottery.js jd_m_sign.js jd_bzlshdgt.js jd_bt_sign.js jx_ttysq.js jd_babel_sign.js"
+my_scripts_list_shufflewzc="jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_nnfls.js jd_gold_sign.js jd_price.js jd_lxLottery.js jd_m_sign.js jd_bt_sign.js jx_ttysq.js jd_babel_sign.js"
 
 ## X1a0He
 scripts_base_url_X1a0He=${ProxyJudge}https://raw.githubusercontent.com/X1a0He/jd_scripts_fixed/main/
@@ -160,7 +161,7 @@ my_scripts_list_jiulan="jd_joy_tx.js jd_jfcz.js jd_jdtj_winner.js"
 
 ## wuye999
 scripts_base_url_wuye999=${ProxyJudge}https://raw.githubusercontent.com/wuye999/myScripts/main/jd/
-my_scripts_list_wuye999="jd_angryKoi.py jd_wabao_help.py"
+my_scripts_list_wuye999="jd_angryKoi.py"
 
 ## 小埋
 scripts_base_url_mmnvnmm=${ProxyJudge}https://raw.githubusercontent.com/mmnvnmm/omo/master/
@@ -301,7 +302,7 @@ for del in ${DeleteCacheFiles}; do
 done
 
 ## 删除脚本和定时
-DeleteScripts="jd_ttysq.js"
+DeleteScripts="jd_ttysq.js jd_bzlshdgt.js jd_wabao_help.py"
 for del in ${DeleteScripts}; do
   [ -f $ScriptsDir/$del ] && rm -rf $ScriptsDir/$del && sed -i "/ $TaskCmd $(echo "$del" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")/d" $ListCrontabUser
 done
