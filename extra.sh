@@ -1,8 +1,6 @@
 #!/bin/bash
-# Update: 2022-01-15
-# Content: add  jd_babel_sign.js(通天塔签到共建)
-#          rpc  jd_ttysq.js -> jx_ttysq.js
-#          del  jd_bzlshdgt.js jd_wabao_help.py
+# Update: 2022-01-17
+# Content: add  jd_mhyyl.js(萌虎摇摇乐) rush_xuanyuan.js(轩辕虎越,风生水起)
 
 ##############################  京  东  商  城  ##############################
 ## 列表格式： 脚本名称 | 活动名称 | 备注说明
@@ -48,6 +46,8 @@
 #  jx_ttysq.js                     天天压岁钱
 #  jd_dns_shop.js                  全民炸年兽店铺大富翁
 #  jd_babel_sign.js                通天塔签到共建
+#  jd_mhyyl.js                     萌虎摇摇乐
+#  rush_xuanyuan.js                轩辕虎越,风生水起
 
 ##############################  脚  本  内  环  境  变  量  ##############################
 ## 推荐使用项目自带的环境变量管理命令，默认交互支持快捷命令
@@ -75,10 +75,6 @@
 
 ##############################  近  期  删  除  ##############################
 
-# jd_ttysq.js
-# jd_bzlshdgt.js
-# jd_wabao_help.py
-
 ##############################  京  东  到  家  ##############################
 
 ## jddj_bean.js                     鲜豆任务
@@ -96,8 +92,8 @@
 ## 免责声明：当作者的脚本不可拉取时，会临时启用别人 FORK 或搬运的库代替
 
 NEWLINE="\n          "
-UpdateDate="2022-01-15"
-UpdateContent="add  jd_babel_sign.js(通天塔签到共建)${NEWLINE}rpc  jd_ttysq.js -> jx_ttysq.jsdel${NEWLINE}jd_bzlshdgt.js jd_wabao_help.py"
+UpdateDate="2022-01-17"
+UpdateContent="add  jd_mhyyl.js(萌虎摇摇乐) rush_xuanyuan.js(轩辕虎越,风生水起)"
 
 ## 作者
 author_list="Public passerby_b smiek2221 star261 shufflewzc X1a0He KingRan Dellear jiulan wuye999 mmnvnmm ccwav"
@@ -125,7 +121,7 @@ fi
 
 ## Public
 scripts_base_url_Public=https://gitee.com/SuperManito/scripts/raw/master/
-my_scripts_list_Public="jd_shop_sign.js jd_super_redrain.js jd_half_redrain.js jd_qqxing.js"
+my_scripts_list_Public="jd_shop_sign.js jd_super_redrain.js jd_half_redrain.js jd_qqxing.js rush_xuanyuan.js"
 
 ## 京东到家
 scripts_base_url_passerby_b=${ProxyJudge}https://raw.githubusercontent.com/passerby-b/JDDJ/main/
@@ -137,11 +133,11 @@ my_scripts_list_smiek2221="jd_sign_graphics.js sign_graphics_validate.js JDJRVal
 
 ## star261
 scripts_base_url_star261=${ProxyJudge}https://raw.githubusercontent.com/star261/jd/main/scripts/
-my_scripts_list_star261="jd_productZ4Brand.js jd_nh_sign.js jd_xiaolong.js jd_dns_shop.js"
+my_scripts_list_star261="jd_productZ4Brand.js jd_nh_sign.js jd_xiaolong.js jd_dns_shop.js jd_mhyyl.js"
 
 ## Facker
 scripts_base_url_shufflewzc=${ProxyJudge}https://raw.githubusercontent.com/shufflewzc/faker2/main/
-my_scripts_list_shufflewzc="jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_nnfls.js jd_gold_sign.js jd_price.js jd_lxLottery.js jd_m_sign.js jd_bt_sign.js jx_ttysq.js jd_babel_sign.js"
+my_scripts_list_shufflewzc="jd_DrawEntrance.js jd_morningSc.js jd_moneyTree_heip.js jd_dwapp.js jd_unsubscriLive.js jd_nnfls.js jd_gold_sign.js jd_lxLottery.js jd_m_sign.js jd_bt_sign.js jx_ttysq.js jd_babel_sign.js"
 
 ## X1a0He
 scripts_base_url_X1a0He=${ProxyJudge}https://raw.githubusercontent.com/X1a0He/jd_scripts_fixed/main/
@@ -153,7 +149,7 @@ my_scripts_list_KingRan="jd_joy_park.js jd_joy_park_task.js jd_fanli.js jd_medal
 
 ## Dellear
 scripts_base_url_Dellear=${ProxyJudge}https://raw.githubusercontent.com/Dellear/lost/main/extra/
-my_scripts_list_Dellear="jd_bean_xibean.js"
+my_scripts_list_Dellear="jd_bean_xibean.js jd_price.js"
 
 ## jiulan
 scripts_base_url_jiulan=${ProxyJudge}https://raw.githubusercontent.com/jiulan/platypus/main/scripts/
@@ -302,7 +298,7 @@ for del in ${DeleteCacheFiles}; do
 done
 
 ## 删除脚本和定时
-DeleteScripts="jd_ttysq.js jd_bzlshdgt.js jd_wabao_help.py"
+DeleteScripts=""
 for del in ${DeleteScripts}; do
   [ -f $ScriptsDir/$del ] && rm -rf $ScriptsDir/$del && sed -i "/ $TaskCmd $(echo "$del" | awk -F\. '{print $1}' | perl -pe "{s|^jd_||; s|^jx_||; s|^jr_||;}")/d" $ListCrontabUser
 done
