@@ -216,7 +216,12 @@ for author in $author_list; do
     repository_platform="https://github.com"
     repository_branch=$(echo $format_url | awk -F '/' '{print$4}')
     reformat_url=$(echo $format_url | sed "s|$repository_branch|tree/$repository_branch|g")
-    [[ ${EnableExtraShellProxy} == true ]] && DownloadJudge="(代理)" || DownloadJudge=""
+    if [[ ${EnableExtraShellProxy} == true ]]; then
+      DownloadJudge="(代理)"
+      sleep 1s ## 降低使用代理下载脚本的请求频率
+    else
+      DownloadJudge=""
+    fi
   elif [[ $(echo $url_list | grep -Eo "github|gitee") == "gitee" ]]; then
     repository_platform="https://gitee.com"
     reformat_url=$(echo $format_url | sed "s|/raw/|/tree/|g")
