@@ -216,12 +216,7 @@ for author in $author_list; do
     repository_platform="https://github.com"
     repository_branch=$(echo $format_url | awk -F '/' '{print$4}')
     reformat_url=$(echo $format_url | sed "s|$repository_branch|tree/$repository_branch|g")
-    if [[ ${EnableExtraShellProxy} == true ]]; then
-      DownloadJudge="(代理)"
-      sleep 1s ## 降低使用代理下载脚本的请求频率
-    else
-      DownloadJudge=""
-    fi
+    [[ ${EnableExtraShellProxy} == true ]] && DownloadJudge="(代理)" || DownloadJudge=""
   elif [[ $(echo $url_list | grep -Eo "github|gitee") == "gitee" ]]; then
     repository_platform="https://gitee.com"
     reformat_url=$(echo $format_url | sed "s|/raw/|/tree/|g")
@@ -238,7 +233,10 @@ for author in $author_list; do
     eval url=$url_list$js
     eval name=$js
     eval formatname=$(echo $js | awk -F '/' '{print$NF}')
+
+    [[ ${EnableExtraShellProxy} == true ]] && sleep 1s ## 降低使用代理下载脚本的请求频率
     wget -q --no-check-certificate $url -O "$ScriptsDir/$name.new" -T 20
+
     if [ $? -eq 0 ]; then
       mv -f $ScriptsDir/$name.new $ScriptsDir/$name
       echo -e "$COMPLETE $formatname"
