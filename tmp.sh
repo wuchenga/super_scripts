@@ -31,3 +31,6 @@ elif [ -d $OwnDir/hyzaw_AllJDScripts ]; then
 else
     echo -e "\n$ERROR 你没有为 Own Repo 扩展仓库配置 Faker 的库跑个锤子脚本！\n"
 fi
+
+sed -i "s/https:\/\/ghproxy\.com\/https:\/\/github\.com\//https:\/\/github\.com\.cnpmjs\.org\//g" $FileConfUser
+sed -i "s/https:\/\/endpoint\.fastgit\.org\/https:\/\/github\.com\//https:\/\/github\.com\.cnpmjs\.org\//g" $FileConfUser
