@@ -4,7 +4,7 @@
 账号1给作者助力，后续接龙 2给1 3给2
 [task_local]
 # 星系牧场
-1 0-23/2 * * * https://gitee.com/SuperManito/scripts/raw/master/jd_qqxing.js, tag=星系牧场, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+22 4-22/3 * * * https://gitee.com/SuperManito/scripts/raw/master/jd_qqxing.js, tag=星系牧场, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
 */
 const $ = new Env('QQ星系牧场');
 //Node.js用户请在jdCookie.js处填写京东ck;
@@ -84,42 +84,43 @@ $.shareuuid = "7ef7ae8f6d934db5b81dfe35b94677b3"
                         if (task.taskid == "interact") {
                             for (l = 0; l < 20 - task.curNum; l++) {
                                 await dotask(task.taskid, task.params)
-                                await $.wait(10000)
+                                await $.wait(18000)
                             }
                         } else if (task.taskid == "scansku") {
                             await getproduct()
                             await writePersonInfo($.vid)
                             await dotask(task.taskid, $.pparam)
-                        } else if (task.taskid !== "add2cart") {
+						} else if (task.taskid !== "add2cart") {
                             await dotask(task.taskid, task.params)
-                            await $.wait(10000)
+                            await $.wait(18000)
                         }
                     }
                     await getinfo()
                     for (k = 0; k < $.drawchance; k++) {
                         await draw()
                     }
-                    // let exchanges = Math.floor($.foodNum / 1000)
-                    // console.log(`可兑换 ${exchanges} 次 20京🐶`)
-                    // if (!Exchange) { console.log("你 默认 不兑换东西,请自行进去活动兑换") } else {
-                    //     for (q = 0; q < exchanges && Exchange; q++) {
-                    //         await exchange(13)
-                    //     }
-                    // }
-                    // await getinfo()
-                    // message += `【京东账号${$.index}】${$.nickName || $.UserName}\n${$.cow} 兑换京🐶 ${$.exchange}  ${$.drawresult}\n`
+                    let exchanges =Math.floor($.foodNum/10000)
+                    console.log(`可兑换 ${exchanges} 次 100京🐶`)
+                    for(q = 0;q<exchanges && Exchange;q++){
+                    await exchange(14)   //16是100豆，14是50豆，13是20豆
+                    }
+                    await getinfo()
+                    if(!Exchange){console.log("你 默认 不兑换东西,请自行进去活动兑换")}
+                    message += `【京东账号${$.index}】${$.nickName || $.UserName}\n${$.cow} 兑换京🐶 ${$.exchange}  ${$.drawresult}\n`
+                    console.log("休息休息~") 
+                    await $.wait(80*1000) 
                 } else {
                   $.msg($.name, "", "跑不起来了~请自己进去一次牧场")
                 }
             }
         }
-//         if (message.length != 0) {
-//         if ($.isNode()) {
-//            await notify.sendNotify("星系牧场", `${message}\n牧场入口：QQ星儿童牛奶京东自营旗舰店->星系牧场\n\n吹水群：https://t.me/wenmouxx`);
-//    }  else {
-//             $.msg($.name, "", '星系牧场' + message)
-//         }
-//            }
+        if (message.length != 0) {
+        if ($.isNode()) {
+           await notify.sendNotify("星系牧场", `${message}\n牧场入口：QQ星儿童牛奶京东自营旗舰店->星系牧场\n\n`);
+   }  else {
+            $.msg($.name, "", '星系牧场' + message)
+        }
+           }
     })()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
@@ -228,7 +229,7 @@ function getToken2() {
                     console.log(`${$.name} API请求失败，请检查网路重试`)
                 } else {
                     data = JSON.parse(data);
-                    // console.log(data)
+                    //console.log(data)
                     $.token2 = data['token']
                     //     console.log($.token2)
                 }
